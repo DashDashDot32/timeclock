@@ -42,7 +42,6 @@ def start_project(project):
     else:
         project_list = open("project_list.txt", "r")
         Lines = project_list.read().splitlines()
-        print(Lines)
         project -= 1
         project_name = Lines[project]   
     
