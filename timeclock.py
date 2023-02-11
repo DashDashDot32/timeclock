@@ -63,21 +63,17 @@ def main():
     if open_project == True:
         stop_project()
     else:
-        continue_project_check = input("Do you want to pick up where you last left off with: " + last_project + " ? (y/n) \n")
-        if continue_project_check == "y":
-            start_project(last_project)
-        else:
-            project_list = open("project_list.txt", "r")
-            Lines = project_list.readlines()
-            count = 0
+        project_list = open("project_list.txt", "r")
+        Lines = project_list.readlines()
+        count = 0
 
-            print("0. New Project")
-            for line in Lines:
-                count += 1
-                print("{}. {}".format(count, line.strip()))
+        print("0. New Project")
+        for line in Lines:
+            count += 1
+            print("{}. {}".format(count, line.strip()))
 
-            project_to_continue = int(input("Which project will you be working on? \n"))
-            start_project(project_to_continue)
+        project_to_continue = int(input("Which project will you be working on? \n"))
+        start_project(project_to_continue)
 
 
 if __name__ == "__main__":
